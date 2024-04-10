@@ -1,0 +1,36 @@
+[project]
+name = "repo-gen"
+version = "0.0.1"
+description = "A simple and fast way to create repositories for AI projects"
+authors = [{ name = "Erika Sánchez-Femat", email = "epsanchezf@ipn.mx" }]
+requires-python = ">=3.8"
+readme = "README.md"
+
+# Minimum required dependencies
+dependencies = [
+    "cookiecutter==2.6.0",
+    "fastapi==0.80.0",
+    "uvicorn==0.15.0",
+    "starlette==0.19.1",
+]
+
+[project.optional-dependencies]
+tests = [
+    "pytest==7.2.2"
+]
+lint = [
+    "ruff==0.3.2"
+]
+dev = []
+
+[build-system]
+requires = ["uv>=0.1.14", "setuptools>=69.1.1", "wheel>=0.42.0"]
+build-backend = "setuptools.build_meta"
+
+testpaths = [
+    "tests",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["repo-gen*"]
