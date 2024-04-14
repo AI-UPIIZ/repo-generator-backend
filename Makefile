@@ -14,5 +14,19 @@ install:
 	python3 -m uv pip compile pyproject.toml -o requirements.txt --extra $(EXTRA); \
 	python3 -m uv pip install -r requirements.txt;
 
+lint:
+	@set -e; \
+	if [ ! -d .venv ]; then \
+		python3 -m venv .venv; \
+	fi; \
+	$(VENV_ACTIVATE);  \
+	python3 -m ruff format .; \
+    python3 -m ruff check . --fix; \
+
 unit:
-	@python -B -m pytest -l --rootdir=. $${TEST};
+	@set -e; \
+	if [ ! -d .venv ]; then \
+		python3 -m venv .venv; \
+	fi; \
+	$(VENV_ACTIVATE);  \
+	python3 -B -m pytest -l --rootdir=. $${TEST};
