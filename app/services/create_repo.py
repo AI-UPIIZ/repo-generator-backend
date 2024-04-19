@@ -4,7 +4,7 @@ import requests
 from fastapi import HTTPException
 
 from consts.consts import URL_API_GITHUB
-from core.config import GITHUB_ORG_NAME, GITHUB_ACCESS_TOKEN
+from app.core.config import GITHUB_ORG_NAME, GITHUB_ACCESS_TOKEN
 
 
 def create_github_repo(project_dir, project_name, project_description):
