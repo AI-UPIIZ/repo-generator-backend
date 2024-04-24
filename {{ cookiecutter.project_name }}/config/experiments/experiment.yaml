@@ -1,0 +1,10 @@
+run:
+  name: run_name
+  experiment_name: experiment_name
+
+pipeline:
+  algorithm: algorithm_name
+  dataset: dataset_name
+  epochs: 100
+  batch_size: 128
+  learning_rate: 0.01
