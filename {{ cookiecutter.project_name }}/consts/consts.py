@@ -10,3 +10,7 @@ class DatasetSplit(EnumConstant):
     TRAIN = "train"
     VAL = "val"
     TEST = "test"
+
+
+class Metadata(EnumConstant):
+    SUBSET = "subset"
