@@ -4,7 +4,7 @@ from consts.paths import PROJECT_PATH, COOKIECUTTER_CONFIG_PATH
 
 
 def generate_project(
-	project_name, project_description, project_owner, project_collaborator
+	project_name, project_description
 ):
 	# Define project directory
 	project_dir = f'./{project_name}'
@@ -13,8 +13,6 @@ def generate_project(
 	context = {
 		'project_name': project_name,
 		'project_description': project_description,
-		'project_owner': project_owner,
-		'project_collaborator': project_collaborator,
 	}
 	# Generate project using Cookiecutter
 	cookiecutter.cookiecutter(
